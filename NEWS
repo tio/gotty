@@ -1,5 +1,36 @@
 
-=== tio v3.7 (2024-08-31) ===
+=== tio v3.8 (2024-11-30) ===
+
+
+Changes since tio v3.7 (2024-08-31):
+
+ * Rename git version to simply version
+
+ * Clean up lua API
+
+   Rename modem_send() to send()
+   Rename send to write()
+
+ * Zero initialize buffer in read_string()
+
+ * Use version from git
+
+ * Fix memory leak in base62_encode()
+
+ * Fix name declaration conflict with socket send()
+
+ * Add clang-format spec
+
+Keith Hill:
+
+ + Add system timestamps to lua read() and new lua read_line() per global options
+ + Add missing timestamp-format epoch
+ + Update send_ to use fsync and tcdrain like normal tty_sync does
+ + Rework read_line to save partial line at timeout
+ + Simplified read_line to reduce cyclomatic complexity
+ + renamed example files read.lua and read_line.lua
+ + moved #define READ_LINE_SIZE to top of file
+ + renamed g_linebuf to linebuf, and moved it into read_line as a static variable
 
 
 
